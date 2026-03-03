@@ -1,0 +1,33 @@
+.main-content__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card__image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card__info {
+  padding: 15px;
+}
+
+.card__tag {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 8px;
+  background: #e6f4ea;
+  color: #1e7e34;
+  font-size: 12px;
+  border-radius: 4px;
+}

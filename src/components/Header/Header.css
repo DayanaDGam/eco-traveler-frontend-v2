@@ -1,0 +1,33 @@
+.header {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: center;
+}
+
+.header__container {
+  max-width: 1280px;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.header__logo {
+  font-family: 'Inter-Black', sans-serif;
+  font-size: 24px;
+  margin: 0;
+}
+
+.header__button {
+  background-color: #2f71e5; /* El azul de tu imagen de UI */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 100px; /* Bordes redondeados del kit */
+  font-weight: 600;
+  cursor: pointer;
+}

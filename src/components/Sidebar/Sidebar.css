@@ -1,0 +1,26 @@
+.sidebar {
+  width: 260px;
+  background-color: #40444b; /* Gris oscuro del diseño */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-height: calc(100vh - 80px);
+}
+
+.sidebar__item {
+  background: none;
+  border: none;
+  color: #b9bbbe;
+  text-align: left;
+  padding: 15px 10px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.sidebar__item:hover {
+  background-color: #4f545c;
+  color: white;
+}

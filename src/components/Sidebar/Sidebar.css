@@ -24,3 +24,31 @@
   background-color: #4f545c;
   color: white;
 }
+
+.sidebar__section {
+  margin-bottom: 20px;
+}
+
+.sidebar__subtitle {
+  font-size: 14px;
+  color: #a0a0a0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.sidebar__filter-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.sidebar__filter-btn:hover {
+  background: #34495e;
+  border-color: #3498db;
+}

@@ -18,6 +18,33 @@
   object-fit: cover;
 }
 
+.card {
+  position: relative; /* Para que el botón se posicione respecto a la card */
+}
+
+.card__fav-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.card__fav-btn.active {
+  background: #e74c3c;
+  color: white;
+}
+
+.card__fav-btn:hover {
+  transform: scale(1.05);
+}
+
 .card__info {
   padding: 15px;
 }

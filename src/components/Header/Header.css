@@ -1,33 +1,37 @@
-.header {
-  width: 100%;
-  background-color: #fff;
-  border-bottom: 1px solid #e5e5e5;
-  display: flex;
-  justify-content: center;
-}
-
 .header__container {
-  max-width: 1280px;
-  width: 100%;
-  height: 80px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 0 20px;
 }
 
-.header__logo {
-  font-family: 'Inter-Black', sans-serif;
-  font-size: 24px;
-  margin: 0;
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espacio entre Inicio y el Buscador */
+  flex-grow: 1;
+  margin-left: 40px;
+}
+
+.header__search-input {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+.header__link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
 }
 
 .header__button {
-  background-color: #2f71e5; /* El azul de tu imagen de UI */
+  background-color: #30486e;
   color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
   border: none;
-  padding: 12px 24px;
-  border-radius: 100px; /* Bordes redondeados del kit */
-  font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
 }

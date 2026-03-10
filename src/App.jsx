@@ -6,30 +6,26 @@ import Sidebar from './components/Sidebar/Sidebar';
 import MainResults from './components/Main/MainResults.jsx';
 import About from './components/About/About';
 import Footer from './components/Footer/Footer';
-import api from './utils/ThirdPartyApi'; // Importamos tu nueva API
+import api from './utils/ThirdPartyApi';
 
 function App() {
   const [activeFilter, setActiveFilter] = useState('Todos');
   const [favorites, setFavorites] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   
-  // Estados para la API
   const [destinations, setDestinations] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [apiError, setApiError] = useState("");
 
-  // Cargar favoritos del localStorage al iniciar
   useEffect(() => {
     const savedFavs = localStorage.getItem('favorites');
     if (savedFavs) setFavorites(JSON.parse(savedFavs));
   }, []);
 
-  // Guardar favoritos en localStorage cuando cambien
   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
 
-  // Llamada a la API
   useEffect(() => {
     setIsLoading(true);
     setApiError("");
@@ -81,7 +77,7 @@ function App() {
 
             <Route path="/resultados" element={
               <MainResults 
-                destinations={favorites} // En favoritos usamos la lista guardada
+                destinations={favorites} 
                 isLoading={false}
                 apiError=""
                 activeFilter="Todos" 

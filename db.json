@@ -6,7 +6,7 @@
       "price": "$3,200",
       "score": "95",
       "category": "Alto",
-      "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800"
+      "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "price": "$2,850",
       "score": "88",
       "category": "Medio",
-      "img": "https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?w=800"
+      "img": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "price": "$1,500",
       "score": "98",
       "category": "Bajo",
-      "img": "https://images.unsplash.com/photo-1594914141221-396be5bfca79?w=800"
+      "img": "https://images.unsplash.com/photo-1594914141221-396be5bfca79?auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "price": "$4,100",
       "score": "92",
       "category": "Alto",
-      "img": "https://images.unsplash.com/photo-1504109586057-7a2ae83d1338?w=800"
+      "img": "https://images.unsplash.com/photo-1529963183134-61a90db47eaf?auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "price": "$2,300",
       "score": "99",
       "category": "Medio",
-      "img": "https://images.unsplash.com/photo-1597402490033-00566379f872?w=800"
+      "img": "https://images.unsplash.com/photo-1597402490033-00566379f872?auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "price": "$1,200",
       "score": "85",
       "category": "Bajo",
-      "img": "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=800"
+      "img": "https://images.unsplash.com/photo-1512813195386-6cf811ad3542?auto=format&fit=crop&w=800&q=80"
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "price": "$3,500",
       "score": "96",
       "category": "Alto",
-      "img": "https://images.unsplash.com/photo-1534329532741-2130948c0a13?w=800"
+      "img": "https://images.unsplash.com/photo-1601058268499-e52658b8bb88?auto=format&fit=crop&w=800&q=80"
     }
   ]
 }

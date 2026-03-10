@@ -1,6 +1,6 @@
 .sidebar {
   width: 260px;
-  background-color: #40444b; /* Gris oscuro del diseño */
+  background-color: #40444b; 
   color: white;
   display: flex;
   flex-direction: column;

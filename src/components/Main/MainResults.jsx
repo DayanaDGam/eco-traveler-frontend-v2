@@ -2,9 +2,19 @@ import React, { useState } from 'react';
 import './MainResults.css';
 
 function DestinationCard({ name, image, price, score, isFavorite, onToggle }) {
+  const handleImageError = (e) => {
+    e.target.src = "https://images.unsplash.com/photo-1536431311719-398b6704d4cc?w=800&q=80";
+    e.target.onerror = null; 
+  };
+
   return (
     <article className="card">
-      <img src={image} alt={name} className="card__image" />
+      <img 
+        src={image} 
+        alt={name} 
+        className="card__image" 
+        onError={handleImageError} 
+      />
       <button 
         className={`card__fav-btn ${isFavorite ? 'active' : ''}`} 
         onClick={onToggle}
@@ -30,10 +40,8 @@ function MainResults({
   onToggleFavorite, 
   displayFavoritesOnly = false 
 }) {
-  // Estado para controlar cuántas tarjetas mostramos
   const [visibleCount, setVisibleCount] = useState(3);
 
-  // Filtrado lógico
   const filteredDestinations = destinations.filter(dest => {
     const matchesCategory = activeFilter === 'Todos' || dest.category === activeFilter;
     const matchesSearch = dest.name.toLowerCase().includes(searchQuery.toLowerCase());
@@ -52,7 +60,6 @@ function MainResults({
         </h2>
       </div>
 
-      {/* 1. Mostrar Preloader si está cargando */}
       {isLoading && (
         <div className="preloader">
           <i className="circle-preloader"></i>
@@ -60,10 +67,8 @@ function MainResults({
         </div>
       )}
 
-      {/* 2. Mostrar Error de la API si existe */}
       {apiError && <p className="error-message">{apiError}</p>}
 
-      {/* 3. Mostrar Resultados o "No se ha encontrado nada" */}
       {!isLoading && !apiError && (
         <>
           <div className="main-content__grid">
@@ -84,7 +89,6 @@ function MainResults({
             )}
           </div>
 
-          {/* 4. Botón Mostrar más: Solo aparece si hay más elementos por mostrar */}
           {!displayFavoritesOnly && visibleCount < filteredDestinations.length && (
             <button className="show-more-btn" onClick={handleShowMore}>
               Mostrar más

@@ -1,12 +1,9 @@
-// utils/ThirdPartyApi.js
-
 class ThirdPartyApi {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
     this._headers = headers;
   }
 
-  // Método privado para manejar la respuesta
   _checkResponse(res) {
     if (res.ok) {
       return res.json();
@@ -14,7 +11,6 @@ class ThirdPartyApi {
     return Promise.reject(`Error: ${res.status}`);
   }
 
-  // Solicitud GET para obtener destinos
   getDestinations() {
     return fetch(`${this._baseUrl}/destinations`, {
       method: "GET",
@@ -22,7 +18,6 @@ class ThirdPartyApi {
     }).then(this._checkResponse);
   }
 
-  // Solicitud POST (ejemplo: guardar un destino favorito en servidor)
   saveFavorite(destinationId) {
     return fetch(`${this._baseUrl}/favorites`, {
       method: "POST",
@@ -32,12 +27,10 @@ class ThirdPartyApi {
   }
 }
 
-// Configuración de la API (Aquí pones tu clave API si es necesaria)
 const api = new ThirdPartyApi({
-  baseUrl: "https://my-json-server.typicode.com/DayanaDGam/eco-traveler-frontend-v2", // URL de tu API
+  baseUrl: "https://my-json-server.typicode.com/DayanaDGam/eco-traveler-frontend-v2",
   headers: {
     "Content-Type": "application/json",
-    // "Authorization": "Bearer TU_KEY_AQUI" 
   }
 });
 

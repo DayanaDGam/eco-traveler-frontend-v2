@@ -19,7 +19,7 @@
 }
 
 .card {
-  position: relative; /* Para que el botón se posicione respecto a la card */
+  position: relative; 
 }
 
 .card__fav-btn {
@@ -61,7 +61,6 @@
 
 .main-content__grid {
   display: grid;
-  /* Crea columnas de al menos 280px, ajustándose automáticamente */
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
   padding: 20px;
@@ -69,11 +68,11 @@
 
 @media (max-width: 480px) {
   .main-content__grid {
-    grid-template-columns: 1fr; /* Una sola columna en teléfonos pequeños */
+    grid-template-columns: 1fr;
     padding: 10px;
   }
   
   .card__image {
-    height: 200px; /* Ajuste de altura de imagen para móvil */
+    height: 200px; 
   }
 }

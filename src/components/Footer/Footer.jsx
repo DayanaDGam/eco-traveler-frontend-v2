@@ -9,4 +9,4 @@ function Footer() {
   );
 }
 
-export default Footer; // <--- REVISA QUE ESTA LÍNEA ESTÉ PRESENTE
+export default Footer; 

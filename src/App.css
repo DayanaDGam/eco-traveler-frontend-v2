@@ -43,7 +43,7 @@
 
 @media (max-width: 768px) {
   .content {
-    flex-direction: column; /* Sidebar arriba, resultados abajo */
+    flex-direction: column;
   }
   
   .main-container {

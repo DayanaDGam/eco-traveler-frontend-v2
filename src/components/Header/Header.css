@@ -1,16 +1,22 @@
-.header__container {
+/* ... tus estilos anteriores ... */
+
+.header__logo {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
 }
 
-.header__nav {
+.header__title {
+  font-size: 1.5rem; /* Ajusta este valor (ej. 1.2rem) para hacerlo aún más pequeño */
+  margin: 0;
+  font-weight: 700;
+  color: #2c3e50;
+  white-space: nowrap;
+}
+
+/* Mejora para que el buscador no se pegue tanto en pantallas pequeñas */
+.header__search-container {
   display: flex;
   align-items: center;
-  gap: 20px; /* Espacio entre Inicio y el Buscador */
-  flex-grow: 1;
-  margin-left: 40px;
 }
 
 .header__search-input {
@@ -18,14 +24,10 @@
   border-radius: 4px;
   border: 1px solid #ccc;
   width: 250px;
+  font-size: 0.9rem;
 }
 
-.header__link {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
+/* Estilo para el botón de favoritos */
 .header__button {
   background-color: #30486e;
   color: white;
@@ -34,4 +36,32 @@
   border: none;
   cursor: pointer;
   white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.header__button:hover {
+  opacity: 0.9;
+}
+
+/* Estilos para tablets y móviles (menos de 768px) */
+@media (max-width: 768px) {
+  .header__container {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .header__nav {
+    margin-left: 0;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header__search-input {
+    width: 100%; /* El buscador ocupa todo el ancho en móvil */
+  }
+
+  .header__title {
+    font-size: 1.2rem; /* Logo más pequeño aún en móvil */
+  }
 }

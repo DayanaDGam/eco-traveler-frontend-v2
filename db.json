@@ -1,0 +1,60 @@
+{
+  "destinations": [
+    {
+      "id": 1,
+      "name": "Kyoto, Japan",
+      "price": "$3,200",
+      "score": "95",
+      "category": "Alto",
+      "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800"
+    },
+    {
+      "id": 2,
+      "name": "Oia, Greece",
+      "price": "$2,850",
+      "score": "88",
+      "category": "Medio",
+      "img": "https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?w=800"
+    },
+    {
+      "id": 3,
+      "name": "Monteverde, Costa Rica",
+      "price": "$1,500",
+      "score": "98",
+      "category": "Bajo",
+      "img": "https://images.unsplash.com/photo-1594914141221-396be5bfca79?w=800"
+    },
+    {
+      "id": 4,
+      "name": "Reykjavík, Iceland",
+      "price": "$4,100",
+      "score": "92",
+      "category": "Alto",
+      "img": "https://images.unsplash.com/photo-1504109586057-7a2ae83d1338?w=800"
+    },
+    {
+      "id": 5,
+      "name": "Galápagos, Ecuador",
+      "price": "$2,300",
+      "score": "99",
+      "category": "Medio",
+      "img": "https://images.unsplash.com/photo-1597402490033-00566379f872?w=800"
+    },
+    {
+      "id": 6,
+      "name": "Tulum, México",
+      "price": "$1,200",
+      "score": "85",
+      "category": "Bajo",
+      "img": "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=800"
+    },
+    {
+      "id": 7,
+      "name": "Bergen, Norway",
+      "price": "$3,500",
+      "score": "96",
+      "category": "Alto",
+      "img": "https://images.unsplash.com/photo-1534329532741-2130948c0a13?w=800"
+    }
+  ]
+}

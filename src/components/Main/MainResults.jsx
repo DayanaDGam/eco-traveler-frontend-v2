@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MainResults.css';
 
 function DestinationCard({ name, image, price, score, isFavorite, onToggle }) {
@@ -20,21 +20,29 @@ function DestinationCard({ name, image, price, score, isFavorite, onToggle }) {
   );
 }
 
-function MainResults({ activeFilter, searchQuery, favorites, onToggleFavorite, displayFavoritesOnly = false }) {
-  const allDestinations = [
-    { id: 1, name: 'Kyoto, Japan', price: '$3,200', score: '95', category: 'Alto', img: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80' },
-    { id: 2, name: 'Oia, Greece', price: '$2,850', score: '88', category: 'Medio', img: 'https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=800' },
-    { id: 3, name: 'Monteverde, Costa Rica', price: '$1,500', score: '98', category: 'Bajo', img: 'https://cdn.pixabay.com/photo/2017/01/14/12/59/iceland-1979445_1280.jpg' }
-  ];
+function MainResults({ 
+  destinations, 
+  isLoading, 
+  apiError, 
+  activeFilter, 
+  searchQuery, 
+  favorites, 
+  onToggleFavorite, 
+  displayFavoritesOnly = false 
+}) {
+  // Estado para controlar cuántas tarjetas mostramos
+  const [visibleCount, setVisibleCount] = useState(3);
 
-  const listToFilter = displayFavoritesOnly ? favorites : allDestinations;
-
-  // Filtro combinado: Categoría + Nombre
-  const filteredDestinations = listToFilter.filter(dest => {
+  // Filtrado lógico
+  const filteredDestinations = destinations.filter(dest => {
     const matchesCategory = activeFilter === 'Todos' || dest.category === activeFilter;
     const matchesSearch = dest.name.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  const handleShowMore = () => {
+    setVisibleCount(prevCount => prevCount + 3);
+  };
 
   return (
     <section className="main-content">
@@ -43,23 +51,47 @@ function MainResults({ activeFilter, searchQuery, favorites, onToggleFavorite, d
           {displayFavoritesOnly ? 'Mis Destinos Guardados' : 'Destinos Recomendados'}
         </h2>
       </div>
-      <div className="main-content__grid">
-        {filteredDestinations.length > 0 ? (
-          filteredDestinations.map((dest) => (
-            <DestinationCard 
-              key={dest.id}
-              name={dest.name}
-              image={dest.img}
-              price={dest.price}
-              score={dest.score}
-              isFavorite={favorites.some(fav => fav.id === dest.id)}
-              onToggle={() => onToggleFavorite(dest)}
-            />
-          ))
-        ) : (
-          <p className="no-results">No se encontraron resultados para tu búsqueda.</p>
-        )}
-      </div>
+
+      {/* 1. Mostrar Preloader si está cargando */}
+      {isLoading && (
+        <div className="preloader">
+          <i className="circle-preloader"></i>
+          <p>Buscando destinos sostenibles...</p>
+        </div>
+      )}
+
+      {/* 2. Mostrar Error de la API si existe */}
+      {apiError && <p className="error-message">{apiError}</p>}
+
+      {/* 3. Mostrar Resultados o "No se ha encontrado nada" */}
+      {!isLoading && !apiError && (
+        <>
+          <div className="main-content__grid">
+            {filteredDestinations.length > 0 ? (
+              filteredDestinations.slice(0, visibleCount).map((dest) => (
+                <DestinationCard 
+                  key={dest.id}
+                  name={dest.name}
+                  image={dest.img}
+                  price={dest.price}
+                  score={dest.score}
+                  isFavorite={favorites.some(fav => fav.id === dest.id)}
+                  onToggle={() => onToggleFavorite(dest)}
+                />
+              ))
+            ) : (
+              <p className="no-results">No se ha encontrado nada</p>
+            )}
+          </div>
+
+          {/* 4. Botón Mostrar más: Solo aparece si hay más elementos por mostrar */}
+          {!displayFavoritesOnly && visibleCount < filteredDestinations.length && (
+            <button className="show-more-btn" onClick={handleShowMore}>
+              Mostrar más
+            </button>
+          )}
+        </>
+      )}
     </section>
   );
 }
